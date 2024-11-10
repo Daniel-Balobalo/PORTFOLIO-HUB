@@ -1,0 +1,12 @@
+PortfolioHub/
+├── public/
+│   ├── assets/
+│   │   ├── css/ (for introstyle.css, style.css)
+│   │   ├── images/ (for favicon and icons)
+├── src/
+│   ├── components/
+│   │   ├── Welcome.js
+│   │   ├── PortfolioHub.js
+│   ├── App.js
+│   ├── index.css
+│   ├── index.js

@@ -1,0 +1,27 @@
+body {
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+    font-family: Arial, sans-serif; /* Set font */
+}
+
+.container {
+    text-align: center; /* Center text inside the container */
+}
+
+.enter-button {
+    margin-top: 20px; /* Space above the button */
+    padding: 15px 30px; /* Button padding */
+    font-size: 20px; /* Font size of the button text */
+    border: none; /* Remove default border */
+    border-radius: 50px; /* Make the button oval-shaped */
+    background-color: #4CAF50; /* Button background color */
+    color: white; /* Button text color */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.enter-button:hover {
+    background-color: #45a049; /* Darker background on hover */
+}

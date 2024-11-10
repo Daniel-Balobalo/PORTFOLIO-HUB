@@ -1,0 +1,50 @@
+/* Center content in the whole page */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #e0e0e0; /* Background color for the whole page */
+}
+
+main {
+    text-align: center; /* Center text within the main section */
+}
+
+.box-container {
+    display: flex;        /* Use Flexbox to align boxes horizontally */
+    justify-content: center; /* Center the boxes horizontally */
+    gap: 10px;            /* Space between boxes */
+    margin-top: 20px;     /* Space above the boxes */
+}
+
+.box {
+    width: 100px;         /* Set width of each box */
+    height: 100px;        /* Set height of each box */
+    border: 1px solid #000; /* Add border to each box */
+    background-color: #f0f0f0; /* Background color */
+    display: flex;        /* Center content inside the box */
+    align-items: center;  /* Vertical alignment */
+    justify-content: center; /* Horizontal alignment */
+    text-decoration: none; /* Remove underline from links */
+    color: #000;          /* Text color */
+    font-size: 16px;      /* Font size */
+    box-sizing: border-box; /* Include border and padding in the element's total width and height */
+}
+
+.box:hover {
+    background-color: #ddd; /* Change background on hover */
+    cursor: pointer;        /* Change cursor to pointer on hover */
+}
+
+/* Responsive design for different screen sizes */
+@media (max-width: 600px) {
+    .box {
+        width: 80px;         /* Adjust box width for smaller screens */
+        height: 80px;        /* Adjust box height for smaller screens */
+        font-size: 14px;     /* Adjust font size for smaller screens */
+    }
+}
