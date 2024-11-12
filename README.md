@@ -1,1 +1,1 @@
-This will be the storage for all my web development projects. 
+This will be the storage for all my web development projects. Still subject to updates.
