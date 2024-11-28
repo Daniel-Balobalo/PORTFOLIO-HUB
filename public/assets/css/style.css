@@ -15,36 +15,41 @@ main {
 }
 
 .box-container {
-    display: flex;        /* Use Flexbox to align boxes horizontally */
-    justify-content: center; /* Center the boxes horizontally */
-    gap: 10px;            /* Space between boxes */
-    margin-top: 20px;     /* Space above the boxes */
+    display: grid; /* Use grid layout for arranging the boxes */
+    grid-template-columns: repeat(3, 1fr); /* Create 3 columns of equal width */
+    grid-gap: 20px; /* Add space between boxes */
+    justify-content: center; /* Center the grid */
+    margin-top: 20px; /* Space above the boxes */
 }
 
 .box {
-    width: 100px;         /* Set width of each box */
-    height: 100px;        /* Set height of each box */
+    width: 100px; /* Set width of each box */
+    height: 100px; /* Set height of each box */
     border: 1px solid #000; /* Add border to each box */
     background-color: #f0f0f0; /* Background color */
-    display: flex;        /* Center content inside the box */
-    align-items: center;  /* Vertical alignment */
+    display: flex; /* Center content inside the box */
+    align-items: center; /* Vertical alignment */
     justify-content: center; /* Horizontal alignment */
     text-decoration: none; /* Remove underline from links */
-    color: #000;          /* Text color */
-    font-size: 16px;      /* Font size */
+    color: #000; /* Text color */
+    font-size: 16px; /* Font size */
     box-sizing: border-box; /* Include border and padding in the element's total width and height */
 }
 
 .box:hover {
     background-color: #ddd; /* Change background on hover */
-    cursor: pointer;        /* Change cursor to pointer on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
-/* Responsive design for different screen sizes */
+/* Responsive design for smaller screens */
 @media (max-width: 600px) {
+    .box-container {
+        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns for smaller screens */
+    }
+
     .box {
-        width: 80px;         /* Adjust box width for smaller screens */
-        height: 80px;        /* Adjust box height for smaller screens */
-        font-size: 14px;     /* Adjust font size for smaller screens */
+        width: 80px; /* Adjust box width for smaller screens */
+        height: 80px; /* Adjust box height for smaller screens */
+        font-size: 14px; /* Adjust font size for smaller screens */
     }
 }
