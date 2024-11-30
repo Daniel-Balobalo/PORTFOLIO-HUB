@@ -18,8 +18,8 @@ main {
     display: grid; /* Use grid layout for arranging the boxes */
     grid-template-columns: repeat(3, 1fr); /* Create 3 columns of equal width */
     grid-gap: 20px; /* Add space between boxes */
-    justify-content: center; /* Center the grid */
-    margin-top: 20px; /* Space above the boxes */
+    justify-content: space-between; /* Center the grid */
+    margin-top: 5% 0; /* Space above the boxes */
 }
 
 .box {
