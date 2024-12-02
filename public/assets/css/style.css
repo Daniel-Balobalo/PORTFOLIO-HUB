@@ -18,17 +18,16 @@ main {
 }
 
 .box-container {
-    display: grid; /* Use grid layout for arranging the boxes */
-    grid-template-columns: repeat(3, 1fr); /* Create 3 columns of equal width */
-    grid-gap: 20px; /* Add space between boxes */
-    justify-content: space-between; /* Center the grid */
-    margin-top: 5% 0; /* Space above the boxes */
+    display: flex; /* Enables flexbox layout for the row of buttons */
+    justify-content: space-between; /* Distributes buttons evenly with space between them */
+    margin: 5% 0; /* Adds vertical spacing between rows */
 }
 
 .box {
     width: 100px; /* Set width of each box */
     height: 100px; /* Set height of each box */
     border: 1px solid #000; /* Add border to each box */
+    border-radius: 8px; /* Rounds the corners of each button */
     background-color: #f0f0f0; /* Background color */
     display: flex; /* Center content inside the box */
     align-items: center; /* Vertical alignment */
