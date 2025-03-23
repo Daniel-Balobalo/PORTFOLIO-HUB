@@ -125,9 +125,17 @@ body:hover .custom-cursor {
 }
 
 .box:hover {
-    transform: scale(1.1) rotate(5deg);
     box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
-    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Odd-numbered boxes */
+.box:nth-child(odd):hover {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+/* Even-numbered boxes */
+.box:nth-child(even):hover {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .box-content {
