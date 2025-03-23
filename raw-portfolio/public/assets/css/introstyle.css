@@ -118,6 +118,7 @@ body:hover .custom-cursor {
     font-weight: bold;
     color: #00ffcc;
     text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    animation: pulse-glow 2s infinite;
 }
 
 @keyframes pulse-glow {
@@ -130,10 +131,6 @@ body:hover .custom-cursor {
     100% {
         text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
     }
-}
-
-.intro-title {
-    animation: pulse-glow 2s infinite;
 }
 
 /* Subtitle Styling */
