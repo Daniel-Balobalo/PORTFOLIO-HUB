@@ -12,17 +12,16 @@ body {
     background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
     font-family: 'Arial', sans-serif;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Changed to flex-start for scrolling */
     justify-content: center;
-    min-height: 100vh;
+    min-height: 100vh; /* Ensures the body is at least the height of the viewport */
     color: #fff;
-    overflow: hidden;
-    cursor: none; /* Hide default cursor */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
 }
 
 /* Particles.js Container */
 #particles-js {
-    position: absolute;
+    position: fixed; /* Changed to fixed to cover the entire screen */
     width: 100%;
     height: 100%;
     top: 0;
@@ -61,6 +60,7 @@ body:hover .custom-cursor {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     max-width: 1200px;
     width: 90%;
+    margin: 2rem auto; /* Added margin for spacing */
     position: relative;
     overflow: hidden;
 }
@@ -160,7 +160,7 @@ body:hover .custom-cursor {
 /* Responsive Design */
 @media (max-width: 768px) {
     .box-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
     }
 
     .portfolio-title {
@@ -174,7 +174,7 @@ body:hover .custom-cursor {
 
 @media (max-width: 480px) {
     .box-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1 column for mobile */
     }
 
     .portfolio-title {
