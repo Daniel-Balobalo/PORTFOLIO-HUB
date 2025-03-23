@@ -1,57 +1,132 @@
-/* Center content in the whole page */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
 body {
     margin: 0;
     padding: 0;
-    background: url(public/assets/images/bg.jpeg);
-    background-position: center;
+    background: url('public/assets/images/bg.jpeg') no-repeat center center fixed;
     background-size: cover;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Full viewport height */
-    
+    min-height: 100vh;
+    color: #fff;
 }
 
-main {
-    text-align: center; /* Center text within the main section */
+/* Main Section Styling */
+.portfolio-section {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 1200px;
+    width: 90%;
 }
 
+.portfolio-title {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #ff6f61;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.portfolio-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #ddd;
+}
+
+/* Box Container Styling */
 .box-container {
-    display: flex; /* Enables flexbox layout for the row of buttons */
-    justify-content: space-between; /* Distributes buttons evenly with space between them */
-    margin: 5% 0; /* Adds vertical spacing between rows */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
 }
 
+/* Box Styling */
 .box {
-    width: 100px; /* Set width of each box */
-    height: 100px; /* Set height of each box */
-    border: 1px solid #000; /* Add border to each box */
-    border-radius: 8px; /* Rounds the corners of each button */
-    background-color: #f0f0f0; /* Background color */
-    display: flex; /* Center content inside the box */
-    align-items: center; /* Vertical alignment */
-    justify-content: center; /* Horizontal alignment */
-    text-decoration: none; /* Remove underline from links */
-    color: #000; /* Text color */
-    font-size: 16px; /* Font size */
-    box-sizing: border-box; /* Include border and padding in the element's total width and height */
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* Makes the box square */
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: #fff;
 }
 
 .box:hover {
-    background-color: #ddd; /* Change background on hover */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.2);
 }
 
-/* Responsive design for smaller screens */
-@media (max-width: 600px) {
+.box-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+}
+
+/* Glow Effect on Hover */
+.box::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent 70%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+
+.box:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
     .box-container {
-        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns for smaller screens */
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .box {
-        width: 80px; /* Adjust box width for smaller screens */
-        height: 80px; /* Adjust box height for smaller screens */
-        font-size: 14px; /* Adjust font size for smaller screens */
+    .portfolio-title {
+        font-size: 2.5rem;
+    }
+
+    .portfolio-subtitle {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .box-container {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-title {
+        font-size: 2rem;
+    }
+
+    .portfolio-subtitle {
+        font-size: 0.9rem;
     }
 }
