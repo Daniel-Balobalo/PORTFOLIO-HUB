@@ -29,8 +29,8 @@ title.addEventListener('mouseenter', () => {
 });
 
 title.addEventListener('mouseleave', () => {
-    cursor.style.width = '40px';
-    cursor.style.height = '40px';
+    cursor.style.width = '30px';
+    cursor.style.height = '30px';
     cursor.style.background = 'rgba(0, 255, 204, 0.5)';
     cursor.style.boxShadow = '0 0 10px #00ffcc, 0 0 20px #00ffcc';
 });
