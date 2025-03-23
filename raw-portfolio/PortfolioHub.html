@@ -9,8 +9,11 @@
     <link rel="icon" type="image/png" sizes="32x32" href="public/assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="public/assets/images/favicon-16x16.png">
     <link rel="manifest" href="public/assets/images/site.webmanifest"> <!-- Favicon -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- Particles.js -->
 </head>
 <body>
+    <div id="particles-js"></div> <!-- Particles.js Container -->
+    <div class="custom-cursor"></div> <!-- Custom Cursor -->
     <main>
         <section class="portfolio-section">
             <h1 class="portfolio-title">Dan's Portfolio Hub</h1>
@@ -46,5 +49,22 @@
             </div>
         </section>
     </main>
+
+    <script>
+        // Particles.js Initialization
+        particlesJS.load('particles-js', 'public/assets/particles.json', function() {
+            console.log('Particles.js loaded!');
+        });
+
+        // Custom Cursor
+        const cursor = document.createElement('div');
+        cursor.classList.add('custom-cursor');
+        document.body.appendChild(cursor);
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.pageX}px`;
+            cursor.style.top = `${e.pageY}px`;
+        });
+    </script>
 </body>
 </html>
