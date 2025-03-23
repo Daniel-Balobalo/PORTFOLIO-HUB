@@ -46,7 +46,35 @@ body {
     box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
 }
 
+body:hover .custom-cursor {
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+}
 
+.custom-cursor::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 255, 204, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 1s infinite;
+}
+
+@keyframes ripple {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
 
 /* Container Styling */
 .container {
@@ -92,6 +120,22 @@ body {
     text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
 }
 
+@keyframes pulse-glow {
+    0% {
+        text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    }
+    50% {
+        text-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+    }
+    100% {
+        text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    }
+}
+
+.intro-title {
+    animation: pulse-glow 2s infinite;
+}
+
 /* Subtitle Styling */
 .intro-subtitle {
     font-size: 1.2rem;
@@ -121,4 +165,53 @@ body {
     cursor: pointer;
     transition: all 0.3s ease; /* Smooth transitions */
     box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+.enter-button:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+}
+
+/* Button Hover Effect */
+.enter-button:hover {
+    color: #fff; /* Change text color to white */
+    background: rgba(0, 255, 204, 0.4); /* Intensify the background color */
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.8); /* Increase glow */
+    transform: scale(1.1); /* Scale up the button */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.enter-button:hover {
+    animation: pulse 1s infinite;
+}
+
+/* Profile Picture Styling */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #00ffcc;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Hide both cursors on profile picture hover */
+.profile-pic:hover {
+    cursor: none; /* Hide default cursor */
+}
+
+.profile-pic:hover ~ .custom-cursor {
+    opacity: 0; /* Hide custom cursor */
 }

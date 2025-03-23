@@ -8,17 +8,20 @@ const cursor = document.createElement('div');
 cursor.classList.add('custom-cursor');
 document.body.appendChild(cursor);
 
-// Mouse Move Event
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = `${e.clientX}px`;
-    cursor.style.top = `${e.clientY}px`;
-});
-
 // Title Element
 const title = document.querySelector('.intro-title');
 
 // Button Element
 const button = document.querySelector('.enter-button');
+
+// Profile Picture Element
+const profilePic = document.querySelector('.profile-pic');
+
+// Mouse Move Event
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+});
 
 // Lens-like effect for the title
 title.addEventListener('mouseenter', () => {
@@ -29,8 +32,8 @@ title.addEventListener('mouseenter', () => {
 });
 
 title.addEventListener('mouseleave', () => {
-    cursor.style.width = '30px';
-    cursor.style.height = '30px';
+    cursor.style.width = '40px';
+    cursor.style.height = '40px';
     cursor.style.background = 'rgba(0, 255, 204, 0.5)';
     cursor.style.boxShadow = '0 0 10px #00ffcc, 0 0 20px #00ffcc';
 });
@@ -46,4 +49,15 @@ button.addEventListener('mouseleave', () => {
     button.style.transform = 'scale(1)';
     button.style.boxShadow = '0 0 10px rgba(0, 255, 204, 0.5)';
     button.style.background = 'rgba(0, 255, 204, 0.2)';
+});
+
+// Hide custom cursor on profile picture hover
+profilePic.addEventListener('mouseenter', () => {
+    cursor.style.opacity = '0'; // Hide custom cursor
+    document.body.style.cursor = 'none'; // Hide default cursor
+});
+
+profilePic.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '1'; // Show custom cursor
+    document.body.style.cursor = 'auto'; // Show default cursor
 });
