@@ -142,7 +142,7 @@ body:hover .custom-cursor {
 /* Box Container Styling */
 .box-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.5rem;
     padding: 1rem;
 }
@@ -150,8 +150,10 @@ body:hover .custom-cursor {
 /* Box Styling */
 .box {
     position: relative;
+    height: 0;
     width: 100%;
     padding-top: 100%;
+    aspect-ratio: 1/1;
     background: rgba(255, 255, 255, 0.05);
     border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
@@ -188,26 +190,34 @@ body:hover .custom-cursor {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 1.5rem;
+    padding: 1rem; /* Reduced from 1.5rem */
     background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
     transform: translateY(100%);
     transition: all 0.4s ease;
     z-index: 2;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    overflow: hidden; /* Prevent text from overflowing */
 }
 
 .project-title {
     display: block;
-    font-size: 1.3rem;
+    font-size: 1.1rem; /* Reduced from 1.3rem */
     font-weight: bold;
     margin-bottom: 0.3rem;
     color: #00ffcc;
     text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis if text is too long */
 }
 
 .project-tech {
     display: block;
-    font-size: 0.9rem;
+    font-size: 0.8rem; /* Reduced from 0.9rem */
     color: rgba(255,255,255,0.7);
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis if text is too long */
 }
 
 /* Neon Glow Effect */

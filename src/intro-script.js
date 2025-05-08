@@ -8,6 +8,14 @@ const cursor = document.createElement('div');
 cursor.classList.add('custom-cursor');
 document.body.appendChild(cursor);
 
+// Initially hide cursor
+cursor.style.opacity = '0';
+
+// Show cursor when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    cursor.style.opacity = '1';
+});
+
 // Title Element
 const title = document.querySelector('.intro-title');
 
