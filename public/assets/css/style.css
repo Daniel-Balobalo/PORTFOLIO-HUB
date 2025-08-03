@@ -79,16 +79,19 @@ body:hover .custom-cursor {
 /* Main Section Styling */
 .portfolio-section {
     text-align: center;
-    padding: 5rem;
+    padding: 4rem 2.5rem; /* Increased horizontal padding by 20px */
     background: rgba(255, 255, 255, 0.1);
     border-radius: 30px;
     backdrop-filter: blur(12px);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-    width: calc(100% - 80px);
-    margin: 40px auto;
+    width: calc(100% - 5rem); /* Increased from 4rem (now 40px + 20px more) */
+    margin: 2rem auto;
     position: relative;
-    overflow: hidden;
-    min-height: calc(100vh - 80px);
+    overflow: visible; /* Changed from hidden to allow hover overflow */
+    max-width: 1350px; /* Increased from 1300px */
+    min-height: auto; /* Remove fixed min-height */
+    height: auto; /* Let content determine height */
+    overflow-y: visible; /* Allow natural scrolling */
 }
 
 .portfolio-section::before {
@@ -143,21 +146,27 @@ body:hover .custom-cursor {
 .box-container {
     display: grid;
     grid-template-columns: repeat(3, minmax(300px, 1fr));
-    gap: 3rem;
-    padding: 2rem;
+    gap: 2.5rem; /* Increased gap by 10px */
+    padding: 2rem; /* Increased container padding */
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    max-width: 1150px; /* Increased from 1100px */
+    padding-bottom: 2rem; /* Add space at bottom */
 }
 
 /* Project Boxes */
 .box {
     position: relative;
-    height: 0;
     width: 100%;
-    padding-top: 100%;
+    aspect-ratio: 1/1;
+    max-width: 300px;
     background: rgba(255, 255, 255, 0.1);
     border: 4px solid rgba(255, 255, 255, 0.2);
     border-radius: 25px;
     overflow: hidden;
     transition: all 0.4s ease;
+    margin: 0 auto;
 }
 
 /* Image Styles */
@@ -168,14 +177,13 @@ body:hover .custom-cursor {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
 }
 
 .project-image.placeholder {
-    background: rgba(255, 255, 255, 0.05);
     display: flex;
     align-items: center;
     justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
     color: rgba(255, 255, 255, 0.3);
     font-size: 1.5rem;
     font-style: italic;
@@ -225,7 +233,9 @@ body:hover .custom-cursor {
 
 /* Hover Effects */
 .box:hover {
+    transform: scale(1.1);
     box-shadow: 0 0 30px rgba(0, 255, 204, 0.8);
+    z-index: 2;
 }
 
 .box:hover .project-overlay {
@@ -250,57 +260,41 @@ body:hover .custom-cursor {
 }
 
 /* Responsive Design */
-@media (max-width: 1600px) {
-    .portfolio-title {
-        font-size: 4.5rem;
-    }
-    .portfolio-subtitle {
-        font-size: 1.8rem;
-    }
-}
-
 @media (max-width: 1200px) {
-    .box-container {
-        grid-template-columns: repeat(2, 1fr);
+    .portfolio-section {
+        max-width: 1100px;
+        padding: 3rem 1.5rem;
     }
-    .portfolio-title {
-        font-size: 4rem;
+    .box-container {
+        max-width: 900px;
     }
 }
 
 @media (max-width: 900px) {
     .portfolio-section {
-        padding: 4rem;
-        width: calc(100% - 60px);
-        margin: 30px auto;
+        width: calc(100% - 3rem);
     }
-    .portfolio-title {
-        font-size: 3.5rem;
-    }
-    .project-title {
-        font-size: 1.8rem;
+    .box-container {
+        grid-template-columns: repeat(2, minmax(250px, 1fr));
     }
 }
 
 @media (max-width: 600px) {
     .portfolio-section {
-        padding: 3rem;
-        border-radius: 20px;
+        padding: 2.5rem 1rem;
+        width: calc(100% - 2rem);
     }
     .box-container {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
+        grid-template-columns: minmax(250px, 1fr);
+        gap: 1.5rem;
     }
-    .portfolio-title {
-        font-size: 3rem;
+}
+
+@media (max-width: 600px) {
+    body {
+        overflow-y: auto; /* Ensure scroll works on mobile */
     }
-    .portfolio-subtitle {
-        font-size: 1.5rem;
-    }
-    .project-title {
-        font-size: 1.5rem;
-    }
-    .project-tech {
-        font-size: 1.1rem;
+    .portfolio-section {
+        padding-bottom: 2rem; /* Add extra space at bottom */
     }
 }
